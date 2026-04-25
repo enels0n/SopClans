@@ -1,0 +1,143 @@
+help:
+  title: '&d&m===== &cMages&6Clans &d&m====='
+  help: '&a/clan help&e - показать помощь'
+  list: '&a/clan list&e - список всех кланов'
+  create: '&a/clan create <название>&e - создать клан'
+  transfer: '&a/clan transfer &c<player>&e - сделать лидером другого участника клана'
+  delete: '&a/clan delete&e - удалить клан'
+  name: '&a/clan name &c<newName>&e - изменить название клана'
+  tag: '&a/clan tag &c<newTag>&e - изменить тег клана'
+  invite: '&a/clan invite &c<player>&e - пригласить игрока в клан'
+  invites: '&a/clan invites&e - посмотреть приглашения'
+  accept: '&a/clan accept &c<clanId>&e - принять приглашение от клана номер clanId'
+  deny: '&a/clan deny &c<clanId>&e - отклонить приглашение от клана номер clanId'
+  kick: '&a/clan kick &c<player>&e - выгнать игрока из клана'
+  promote: '&a/clan promote &c<player>&e - повысить звание игрока в клане'
+  demote: '&a/clan demote &c<player>&e - понизить звание игрока в клане'
+  leave: '&a/clan leave&e - покинуть клан'
+  members: '&a/clan members&e - список участников вашего клана'
+  addslots: '&a/clan addslots&e - приобрести дополнительные слоты для клана'
+  declare_war: '&a/clan war &c<clanId>&e - объявить войну другому клану'
+  set_clanhome: '&a/clan sethome&e - установить точку кланового дома'
+  home: '&a/clan home&e - телепортироваться на точку кланового дома'
+  footer: '&d&m===== &7by &eE.NeLsOn &d&m====='
+messages:
+  only_player: "The command can only be used by a player."
+  invalid_arguments: "%alocales_magesclans_invalid-arguments%"
+  not_in_clan: "%alocales_magesclans_not-in-clan%"
+  invalid_id: "%alocales_magesclans_invalid-id%"
+  clan_not_found: "%alocales_magesclans_clan-not-found%"
+  clan_delete: "%alocales_magesclans_clan-delete%"
+  clan_delete_broadcast: "%alocales_magesclans_clan-delete-broadcast%"
+  max_slots: "%alocales_magesclans_max-slots%"
+  no_access_war: "%alocales_magesclans_no-access-war%"
+  no_access_add_slots: "%alocales_magesclans_no-access-add-slots%"
+  no_access_demote: "%alocales_magesclans_no-access-demote%"
+  no_access_promote: "%alocales_magesclans_no-access-promote%"
+  no_access_switch_pvp: "%alocales_magesclans_no-access-switch-pvp%"
+  no_access_change_tag: "%alocales_magesclans_no-access-change-tag%"
+  no_access_change_name: "%alocales_magesclans_no-access-change-name%"
+  no_access_kick: "%alocales_magesclans_no-access-kick%"
+  no_access_invite: "%alocales_magesclans_no-access-invite%"
+  no_member_found: "%alocales_magesclans_no-member-found%"
+  not_enought_money: "%alocales_magesclans_not-enought-money%"
+  cannot_declare_youself: "%alocales_magesclans_cannot-declare-youself%"
+  clan_is_already_war: "%alocales_magesclans_clan-is-already-war%"
+  charged_war: "%alocales_magesclans_charged-war%"
+  charged_promote: "%alocales_magesclans_charged-promote%"
+  charged_demote: "%alocales_magesclans_charged-demote%"
+  charged_switch_pvp: "%alocales_magesclans_charged-switch-pvp%"
+  charged_set_tag: "%alocales_magesclans_charged-set-tag%"
+  charged_add_slots: "%alocales_magesclans_charged-add-slots%"
+  charged_change_name: "%alocales_magesclans_charged-change-name%"
+  charged_kick: "%alocales_magesclans_charged-kick%"
+  charged_invite: "%alocales_magesclans_charged-invite%"
+  charged_create: "%alocales_magesclans_charged-create%"
+  charged_clanhome_set: "%alocales_magesclans_charged-clanhome-set%"
+  invite_not_found: "%alocales_magesclans_invite-not-found%"
+  something_wrong_clan_not_found: "%alocales_magesclans_something-wrong-clan-not-found%"
+  switch_pvp_on_1: "%alocales_magesclans_switch-pvp-on-1%"
+  switch_pvp_on_2: "[%rank%] %player%"
+  switch_pvp_off_1: "%alocales_magesclans_switch-pvp-off-1%"
+  switch_pvp_off_2: "[%rank%] %player%"
+  accept_invite_1: "%player%"
+  accept_invite_2: "%alocales_magesclans_accept-invite-2%"
+  deny_invite_1: "%player%"
+  deny_invite_2: "%alocales_magesclans_deny-invite-2%"
+  deny_refund: "%alocales_magesclans_deny-refund%"
+  tag_already_set: "%alocales_magesclans_tag-already-set%"
+  invalid_tag: "%alocales_magesclans_invalid-tag%"
+  invalid_tag_1: "%alocales_magesclans_invalid-tag-1%"
+  another_clan_has_this_tag: "%alocales_magesclans_another-clan-has-this-tag%"
+  set_tag_1: "[%rank%] %player%"
+  set_tag_2: "%alocales_magesclans_set-tag-2%"
+  demote_lower_rank: "%alocales_magesclans_demote-lower-rank%"
+  player_cannot_demoted: "%alocales_magesclans_player-cannot-demoted%"
+  demote_player_1: "[%rank%] %player%" #demoter
+  demote_player_2: "%alocales_magesclans_demote-player-2%"
+  demote_player_3: "%player%" #demoted
+  demote_player_4: "%alocales_magesclans_demote-player-4%"
+  promote_player_1: "[%rank%] %player%" #promoter
+  promote_player_2: "%alocales_magesclans_promote-player-2%"
+  promote_player_3: "%player%" #demoted
+  promote_player_4: "%alocales_magesclans_promote-player-4%"
+  add_slots_1: "[%rank%] %player%"
+  add_slots_2: "%alocales_magesclans_add-slots-2%"
+  is_not_leader: "%alocales_magesclans_is-not-leader%"
+  transfer_clan_1: "%alocales_magesclans_transfer-clan-1%"
+  transfer_clan_2: "%player%" #new leader
+  transfer_clan_old_leader: "%alocales_magesclans_transfer-clan-old-leader%"
+  member_list: "%alocales_magesclans_member-list%"
+  member_list_item: "[%rank%] %player%"
+  member_list_item_offline: "[%rank%] %player%"
+  declare_war_attaker_1: "[%rank%] %player%"
+  declare_war_attaker_2: "%alocales_magesclans_declare-war-attaker-2% %defender%"
+  declare_war_defender: "%alocales_magesclans_declare-war-defender-1% %attacker% %alocales_magesclans_declare-war-defender-2%"
+  cannot_attack_clanmate: "%alocales_magesclans_cannot-attack-clanmate%"
+  clanlist_empty: "%alocales_magesclans_clanlist-empty%"
+  clanlist_title: "%alocales_magesclans_clanlist-title%"
+  clanlist_item_1: "%alocales_magesclans_clanlist-item-1%"
+  clanlist_item_2: "%leader%"
+  clanlist_item_2_offline_leader: "%alocales_magesclans_clanlist-item-2-offline-leader%"
+  cannot_leave_because_leader: "%alocales_magesclans_cannot-leave-because-leader%"
+  leaver_error: "%alocales_magesclans_leaver-error%"
+  leave: "%alocales_magesclans_leave%"
+  leave_broadcast_1: "%player%"
+  leave_broadcast_2: "%alocales_magesclans_leave-broadcast-2%"
+  kick_member_not_found: "%alocales_magesclans_kick-member-not-found%"
+  kick_lower_rank: "%alocales_magesclans_kick-lower-rank%"
+  kick_error: "%alocales_magesclans_kick-error%"
+  kick_1: "[%rank%] %player%" #kicker
+  kick_2: "%alocales_magesclans_kick-2%"
+  kick_3: "%player%" #kicked
+  kick_4: "%alocales_magesclans_kick-4%"
+  kick_broadcast_1: "%player%"
+  kick_broadcast_2: "%alocales_magesclans_kick-broadcast-2%"
+  name_already_set: "%alocales_magesclans_name-already-set%"
+  invalid_name: "%alocales_magesclans_invalid-name%"
+  invalid_name_1: "%alocales_magesclans_invalid-name-1%"
+  another_clan_has_this_name: "%alocales_magesclans_another-clan-has-this-name%"
+  set_name_1: "[%rank%] %player%"
+  set_name_2: "%alocales_magesclans_set-name-2%"
+  invite_only_online_player: "%alocales_magesclans_invite-only-online-player%"
+  invite_player_is_in_clan: "%alocales_magesclans_invite-player-is-in-clan%"
+  invite_player_already_invited: "%alocales_magesclans_invite-player-already-invited%"
+  invite_max_members: "%alocales_magesclans_invite-max-members%"
+  invite_1: "[%rank%] %player%" #inviter
+  invite_2: "%alocales_magesclans_invite-2%"
+  invite_3: "%player%" #invited
+  invite_invited_1: "%player%" #inviter
+  invite_invited_2: "%alocales_magesclans_invite-invited-2%"
+  create_already_in_clan: "%alocales_magesclans_create-already-in-clan%"
+  create_clan: "%alocales_magesclans_create-clan%"
+  invites_no_invites: "%alocales_magesclans_invites-no-invites%"
+  invites_list_title: "%alocales_magesclans_invites-list-title%"
+  invites_list_item_1: "%id% | %clan% [%tag%] | "
+  invites_list_item_2: "[%rank%] %inviter%"
+  invites_list_item_inviter_offline: "[%rank%] %inviter%"
+  invites_list_footer: "%alocales_magesclans_invites-list-footer%"
+  clan_levelup_broadcast: "%alocales_magesclans_clan-levelup-broadcast% - %level%"
+  clanhome_set_1: "[%rank%] %player%"
+  clanhome_set_2: "%alocales_magesclans_clanhome-set-2% %world%, %x%, %y%, %z%"
+  clanhome_empty: "%alocales_magesclans_clanhome-empty%"
+  clanhome_teleport: "%alocales_magesclans_clanhome-teleport%"

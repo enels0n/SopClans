@@ -1,0 +1,266 @@
+mysql:
+  host: 127.0.0.1
+  port: 3306
+  db: database
+  table: table
+  user: ""
+  pass: ""
+  maxLifeTime: 30
+
+economy:
+  #включена ли экономика? если нет, то нельзя будет докупить
+  #дополнительные слоты для клана, однако добавить слоты
+  #сможет администратор командой /clan admin addSlots <clanId> <slots>
+  enable: true
+  
+  #стоимость создания клана
+  create_price: 1000000
+  
+  #увеличивать стоимость докупки слотов? если цена должна быть фиксирована, ставьте false
+  increase_buy_slots_price: false
+  
+  #стоимость докупки слотов
+  add_slots_price: 500000
+  
+  #стоимость приглашения игрока в клан
+  invite_price: 100000
+  
+  #сумма возврата при отказе или отмены приглашения
+  invite_refund: 50000
+  
+  #стоимость кика участника из клана
+  kick_price: 0
+  
+  #стоимость выхода участника из клана (не, ну а вдруг)
+  leave_price: 0
+  
+  #стоимость смены названия
+  change_name_price: 150000
+  
+  #стоимость смены тега
+  change_tag_price: 200000
+  
+  #стоимость объявления войны
+  declare_war_price: 400000
+  
+  #стоимость переключения PVP режима
+  pvp_switch_price: 50000
+  
+  #стоимость установки точки кланового дома
+  set_clanhome: 50000
+  
+  #стоимости повышения званий
+  promote_price:
+    general: 500000
+    colonel: 390000
+    major: 300000
+    lieutenant: 220000
+    sergeant: 150000
+    corporal: 100000
+    soldier: 70000
+    deserter: 0
+  
+  #стоимости понижения званий
+  demote_price:
+    general: 0
+    colonel: 0
+    major: 0
+    lieutenant: 0
+    sergeant: 0
+    corporal: 0
+    soldier: 0
+    deserter: 0
+
+clan:
+  #стартовое количество слотов при создании
+  min_slots: 5
+  
+  #максимальное количество слотов
+  #админ-команда добавления слотов может обойти этот параметр
+  max_slots: 20
+  
+  #по сколько слотов будет прибавляться при докупке
+  add_slots_step: 5
+  
+  #шаблон названия
+  name_characters: '[a-zA-Z0-9_ ]{5,15}'
+  
+  #шаблон тега
+  tag_characters: '[a-zA-Z0-9_]{3,6}'
+  
+  #может ли лидер клана добавлять новые ранги (все новые ранги будут равны рангу member. по сути, меняется только отображаемое название)
+  can_create_ranks: false #подумать, надо ли?
+  
+  #максимальный уровень клана
+  max_level: 10
+
+  #стандартные ранги игроков
+  ranks: #порядок рангов важен. чем выше в списке, тем выше звание
+    leader: #нельзя удалять или менять
+      display_name: '&6Лидер'
+    
+    soleader:
+      display_name: '&4Заместитель' #отображение так же можно настроить в графе placeholders.player.rank
+      can_invite: true #может приглашать других участников
+      can_kick: true #может кикать других участников (ниже по рангу)
+      can_change_name: true #может менять название клана
+      can_change_tag: true #может менять тег клана
+      can_promote: true #может повышать игроков (повышение возможно только до ранга ниже текущего)
+      can_demote: true #может понижать игроков (понижение возможно только от ранга ниже текущего)
+      can_declare_war: true #может объявить войну
+      can_add_slots: true #может докупать слоты. (есть ли смысл отключать кому-то?)
+      can_set_clanhome: true #может устанавливать clanhome.
+    
+    general:
+      display_name: '&4Генерал'
+      can_invite: true
+      can_kick: true
+      can_promote: true
+      can_demote: true
+      can_declare_war: true
+      can_add_slots: true
+      can_set_clanhome: true
+
+    colonel:
+      display_name: '&5Полковник'
+      can_invite: true
+      can_promote: true
+      can_declare_war: true
+      can_add_slots: true
+      
+    major:
+      display_name: '&9Майор'
+      can_invite: true
+      can_declare_war: true
+      can_add_slots: true
+      
+    lieutenant:
+      display_name: '&1Лейтенант'
+      can_invite: true
+      can_add_slots: true
+      
+    sergeant:
+      display_name: '&2Сержант'
+      can_invite: true
+      can_add_slots: true
+      
+    corporal:
+      display_name: '&aКапрал'
+      can_add_slots: true
+    
+    soldier:
+      display_name: '&7Рядовой'
+      can_add_slots: true
+      default: true #будет выдаваться автоматически при вступлении в клан
+    
+    deserter:
+      display_name: '&fДезертир'
+      can_add_slots: true
+  
+  #цвета в зависимости от уровня клана, можно добавить в плейсхолдеры дописав %color%.
+  #если clan.max_level больше, то будет использоваться цвет наивысшего уровня в этого списка
+  level_colors:
+    '1': '&f'
+    '2': '&7'
+    '3': '&8'
+    '4': '&9'
+    '5': '&3'
+    '6': '&d'
+    '7': '&c'
+    '8': '&5'
+    '9': '&1'
+    '10': '&0'
+  
+  exp:
+    system: combined #damage, kill, combined
+    for_kill:
+      min: 4.0
+      max: 6.0
+    for_damage:
+      min: 0.5
+      max: 0.8
+  
+  war_multiplier:
+    attaker: 3.0
+    defender: 1.5
+  
+  war_duration: 86400
+  
+  levels: #exp
+    1: 0
+    2: 3000
+    3: 6000
+    4: 9000
+    5: 12000
+    6: 15000
+    7: 18000
+    8: 21000
+    9: 24000
+    10: 27000
+
+placeholders:
+  #Доступные внутренние заменители
+  # %id% - айди клана
+  # %color% - цвет тега, в зависимости от уровня клана (clan.level_colors)
+  # %tag% - тег клана
+  # %name% - название клана
+  # %rank% - ранг игрока
+  # %level% - уровень клана
+  # %exp% - текущий опыт клана
+  # %memberexp% - опыт, набитый игроком
+  # %members% - количество участников
+  # %slots% - количество слотов
+  # %freeslots% - количество свободных слотов
+  # %leader% - ник лидера
+  # %leaderuuid% - uuid лидера
+  # 
+  clan:
+    - '&f[%color%%tag%&f]'
+    - '&8[%color%%tag%&8] '
+    - '%color%%tag%'
+    - '%tag%'
+    - '&f[%color%%name%&f]'
+    - '&8[%color%%name%&8] '
+    - '%color%%name%'
+    - '%name%'
+    - '&f[%rank%&f]'
+    - '&8[%rank%&8] '
+    - '%rank%'
+    
+  clan_if_empty: #подставляется вместо *placeholders.clan*, если игрок не в клане
+    - '&f[&7не в клане&f]'
+    - ''
+    - ''
+    - ''
+    - '&f[&7не в клане&f]'
+    - ''
+    - ''
+    - ''
+    - '&f[&7не в клане&f]'
+    - '&8[&fnone&8] '
+    - ''
+
+  clan_top:
+    - '&8[%color%%name%&8] &fLVL: %color%%level% &8[&6Лидер&8]'
+    - '%leader%'
+    
+  clan_top_if_empty:
+    - ' - '
+    - ' - '
+
+help: |-
+  &a/clan create <название>&e - создать клан
+  &a/clan delete&e - удалить клан
+  &a/clan transfer &c<player>&e - сделать лидером другого участника клана
+  &a/clan name &c<newName>&e - изменить название клана
+  &a/clan tag &c<newTag>&e - изменить тег клана
+  &a/clan invite &c<player>&e - пригласить игрока в клан
+  &a/clan accept &c<clanId>&e - принять приглашение от клана номер clanId
+  &a/clan deny &c<clanId>&e - отклонить приглашение от клана номер clanId
+  &a/clan kick &c<player>&e - выгнать игрока из клана
+  &a/clan promote &c<player>&e - повысить звание игрока в клане
+  &a/clan demote &c<player>&e - понизить звание игрока в клане
+  &a/clan leave&e - покинуть клан
+  &a/clan list&e - список всех кланов
+  &a/clan members&e - список участников вашего клана
+  &a/clan addslots&e - приобрести дополнительные слоты для клана
