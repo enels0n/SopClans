@@ -29,6 +29,22 @@ public class SethomeCommand {
 			return;
 		}
 
+		String worldMode = SopClans.configMain.getString("economy.clanhome-worlds.type", "blacklist");
+		java.util.List<String> worlds = SopClans.configMain.getStringList("economy.clanhome-worlds.worlds");
+		String currentWorld = player.getWorld().getName();
+		boolean listed = false;
+		for(String world : worlds) {
+			if(world != null && world.equalsIgnoreCase(currentWorld)) {
+				listed = true;
+				break;
+			}
+		}
+		boolean allowed = "whitelist".equalsIgnoreCase(worldMode) ? listed : !listed;
+		if(!allowed) {
+			player.sendMessage("You cannot set clan home in this world.");
+			return;
+		}
+
 		Double price = SopClans.configMain.getDouble("economy.set_clanhome");
 		if(SopClans.economy != null && price>0) {
 			if(SopClans.economy.getBalance(player) < price) {

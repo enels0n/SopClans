@@ -1,11 +1,17 @@
-mysql:
-  host: 127.0.0.1
+database:
+  enabled: true
+  table-prefix: 'sopclans_'
+  host: '127.0.0.1'
   port: 3306
-  db: database
-  table: table
-  user: ""
-  pass: ""
-  maxLifeTime: 30
+  database: 'database'
+  username: ''
+  password: ''
+  pool-name: 'SopClans'
+  maximum-pool-size: 10
+  minimum-idle: 2
+  connection-timeout: 30000
+  idle-timeout: 600000
+  max-lifetime: 1800000
 
 economy:
   #включена ли экономика? если нет, то нельзя будет докупить
@@ -48,6 +54,10 @@ economy:
   
   #стоимость установки точки кланового дома
   set_clanhome: 50000
+  
+  clanhome-worlds:
+    type: blacklist
+    worlds: []
   
   #стоимости повышения званий
   promote_price:
